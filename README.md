@@ -1,5 +1,5 @@
-# RPPOON_LV1_RALASIC
 Program.cs
+
 namespace lv1_ralasic
 {
     
@@ -94,7 +94,9 @@ Note.cs
 
 ToDo.cs
 
-class ToDo
+namespace lv1_ralasic
+{
+    class ToDo
     {
         List<TimeNote> notes;
         public ToDo()
@@ -132,10 +134,13 @@ class ToDo
             }
         }
     }
-
+}
 
 TimeNote.cs
-class TimeNote:Note, IComparable<TimeNote>
+
+namespace lv1_ralasic
+{
+    class TimeNote:Note, IComparable<TimeNote>
     {
         private DateTime time;
         public TimeNote (DateTime time, string author, string task, int priority):base (author,task,priority)
@@ -156,11 +161,13 @@ class TimeNote:Note, IComparable<TimeNote>
             return this.Priority.CompareTo(note.Priority);
         }
     }
-
+}
 
 INote.cs
 
-interface INote: IComparable<INote>
+namespace lv1_ralasic
+{
+    interface INote: IComparable<INote>
     {
         string Task
         {
@@ -179,3 +186,4 @@ interface INote: IComparable<INote>
 
         int CompareTo(INote note);
     }
+}
